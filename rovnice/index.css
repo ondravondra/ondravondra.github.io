@@ -1,0 +1,70 @@
+body {
+  background-color: "white";
+  font-family: "Courier New";
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 25rem 7rem 25rem;
+}
+
+.draggable, .equals, .zero {
+  display: inline-block;
+  border: 2px solid white;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.droptarget {
+  transition: border-width 0.5s linear;
+}
+
+.droptarget, .equality {
+  border: 20px solid white;
+  margin: 0px;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.equals {
+  color: black;
+}
+
+.zero {
+  display: none;
+  color: black;
+  width: 2rem;
+}
+
+.zero:only-child {
+  display: inline-block;
+}
+
+.hover {
+  border: 20px dashed gray;
+}
+
+.droptarget.left .positive,
+.droptarget.right .negative {
+  background: green;
+}
+
+.droptarget.left .negative,
+.droptarget.right .positive {
+  background: red;
+}
+
+.droptarget.left .draggable+.positive:before,
+.droptarget.right .draggable+.negative:before{
+  content: "+";
+}
+
+.droptarget.left .negative:before,
+.droptarget.right .positive:before{
+  content: "-";
+}
