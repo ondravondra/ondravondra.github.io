@@ -68,3 +68,7 @@ body {
 .droptarget.right .positive:before{
   content: "-";
 }
+
+.editor {
+  border: 20px solid white;
+}
