@@ -66,4 +66,8 @@ document.querySelectorAll('#enter').forEach(item => {
   });
 });
 
-setEquation('x+20=50');
+if (location.hash) {
+  setEquation(location.hash.replace(/^#/, ''))
+} else {
+  setEquation('x+20=50');
+}
